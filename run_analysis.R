@@ -30,4 +30,4 @@ names(final_df) <- gsub("-std()",".STD",names(final_df));
 names(final_df) <- gsub("-freq()",".Frequency",names(final_df));
 summarized_df <- final_df %>% group_by(Subject,Activity) %>% summarise(across(everything(), mean))
 
-write.table(summarized_df, "tidydata.csv")
+write.table(summarized_df, "tidydata.txt", row.names = FALSE)
